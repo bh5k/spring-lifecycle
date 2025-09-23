@@ -32,4 +32,8 @@ public class PieService implements InitializingBean, DisposableBean {
     public void destroy() {
         System.out.println("🍰 [DisposableBean.destroy] Final cleanup for PieService");
     }
+
+    public String bakePie() {
+        return "Baking a delicious pie 🥧";
+    }
 }
