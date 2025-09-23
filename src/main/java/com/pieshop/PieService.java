@@ -13,27 +13,31 @@ public class PieService implements InitializingBean, DisposableBean {
         System.out.println("🍰 [Constructor] PieService bean instantiated");
     }
 
-    @PostConstruct
+    //@PostConstruct
     public void postConstructInit() {
         System.out.println("🍰 [@PostConstruct] Initialization logic for PieService");
     }
 
-    @Override
+    //@Override
     public void afterPropertiesSet() {
         System.out.println("🍰 [InitializingBean.afterPropertiesSet] Setup logic for PieService");
     }
 
-    @PreDestroy
+    //@PreDestroy
     public void preDestroyCleanup() {
         System.out.println("🍰 [@PreDestroy] Cleanup logic for PieService");
     }
 
-    @Override
+    //@Override
     public void destroy() {
         System.out.println("🍰 [DisposableBean.destroy] Final cleanup for PieService");
     }
 
     public String bakePie() {
         return "Baking a delicious pie 🥧";
+    }
+
+    public String servePie() {
+        return "Serving the pie 🍽️";
     }
 }
