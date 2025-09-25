@@ -12,7 +12,7 @@ public class PieShopApplication {
         SpringApplication.run(PieShopApplication.class, args);
     }
 
-    @Bean
+    //@Bean
     CommandLineRunner demo(ApplicationContext ctx) {
         return args -> {
             Pie pie = ctx.getBean(Pie.class);
@@ -20,11 +20,20 @@ public class PieShopApplication {
         };
     }
 
-    @Bean
+    //@Bean
     CommandLineRunner demo2(ApplicationContext ctx) {
         return args -> {
-            PieService service = ctx.getBean(PieService.class);
+            PieOperations service = ctx.getBean(PieOperations.class);
             System.out.println(service.bakePie());
+        };
+    }
+
+    //@Bean
+    CommandLineRunner demo3(ApplicationContext ctx) {
+        return args -> {
+            PieOperations service = ctx.getBean(PieOperations.class);
+            System.out.println(service.bakePie());
+            System.out.println(service.servePie());
         };
     }
 

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PieService implements InitializingBean, DisposableBean {
+public class PieService implements InitializingBean, DisposableBean, PieOperations {
 
     public PieService() {
         System.out.println("🍰 [Constructor] PieService bean instantiated");
@@ -33,10 +33,12 @@ public class PieService implements InitializingBean, DisposableBean {
         System.out.println("🍰 [DisposableBean.destroy] Final cleanup for PieService");
     }
 
+    @Override
     public String bakePie() {
         return "Baking a delicious pie 🥧";
     }
 
+    @Override
     public String servePie() {
         return "Serving the pie 🍽️";
     }
