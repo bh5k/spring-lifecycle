@@ -1,10 +1,8 @@
 package com.pieshop;
 
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-@Component
-@Order(2)
+//@Component
 public class JuniorBaker implements Baker {
     public JuniorBaker() {
         System.out.println("🧑‍🍳 Junior Baker is ready");
@@ -13,5 +11,10 @@ public class JuniorBaker implements Baker {
     @Override
     public void bake() {
         System.out.println("🧑‍🍳 Junior Baker follows the Senior Baker");
+    }
+
+    @Override
+    public String getName() {
+        return "Junior Baker!";
     }
 }

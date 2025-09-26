@@ -37,7 +37,7 @@ public class PieShopApplication {
         };
     }
 
-    @Bean
+    //@Bean
     CommandLineRunner demo4(ApplicationContext ctx) {
         return args -> {
             Bakery bakery = ctx.getBean(Bakery.class);
@@ -45,4 +45,11 @@ public class PieShopApplication {
         };
     }
 
+    @Bean
+    CommandLineRunner demo5(ApplicationContext ctx) {
+        return args -> {
+            CircularBaker baker = ctx.getBean(CircularBaker.class);
+            baker.bake();
+        };
+    }
 }
