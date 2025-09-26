@@ -9,16 +9,21 @@ import java.util.List;
 @DependsOn("oven")
 public class Bakery {
 
-    private final List<Baker> bakers;
+    private final Baker baker;
 
-    public Bakery(List<Baker> bakers) {
-        this.bakers = bakers;
+    public Bakery(Baker baker) {
+        this.baker = baker;
         System.out.println("🏪 Bakery is open!");
         startBaking();
     }
 
+    public void openShop() {
+        System.out.println("🏪 Bakery is open!");
+        baker.bake();
+    }
+
     private void startBaking() {
         System.out.println("🏪 Bakery is starting the baking process...");
-        bakers.forEach(Baker::bake);
+        baker.bake();
     }
 }
